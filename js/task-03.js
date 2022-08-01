@@ -16,5 +16,8 @@ const images = [
 const gallerysEL = document.querySelector(".gallery");
 console.log(gallerysEL);
 
+const imgEl = images[0];
 const imagesEl = document.createElement("img");
+imagesEl.src = imgEl.url;
+imagesEl.alt = imgEl.alt;
 console.log(imagesEl);
