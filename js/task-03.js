@@ -14,10 +14,11 @@ const images = [
 ];
 
 const gallerysEL = document.querySelector(".gallery");
-console.log(gallerysEL);
 
-const imgEl = images[0];
-const imagesEl = document.createElement("img");
-imagesEl.src = imgEl.url;
-imagesEl.alt = imgEl.alt;
-console.log(imagesEl);
+const makeImgGalleryMarkup = ({ url, alt }) => {
+  return `<li><img src = "${url}" alt = "${alt}"></li>`;
+};
+
+const linkMakeImgGalleryRows = images.map(makeImgGalleryMarkup).join(" ");
+
+gallerysEL.insertAdjacentHTML("beforeend", linkMakeImgGalleryRows);
