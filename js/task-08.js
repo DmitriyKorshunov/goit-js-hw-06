@@ -1,6 +1,5 @@
 const form = document.querySelector(".login-form");
-
-form.addEventListener("submit", handleSubmit);
+//console.log(form);
 
 function handleSubmit(event) {
   event.preventDefault();
@@ -9,10 +8,12 @@ function handleSubmit(event) {
   } = event.currentTarget;
 
   if (email.value === "" || password.value === "") {
-    return alert("Please fill in all the fields!");
+    return alert("All fields must be filled!");
   }
   const userDetails = { email: email.value, Password: password.value };
 
   console.log(userDetails);
   event.currentTarget.reset();
 }
+
+form.addEventListener("submit", handleSubmit);
